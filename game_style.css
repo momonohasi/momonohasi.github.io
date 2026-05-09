@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: auto;
+  overflow-y: auto;
+  font-family: sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 120px);
+  gap: 18px;
+}
+
+.fruit-card {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  overflow: visible;
+}
+
+.pop {
+  position: absolute;
+  font-size: 1.8rem;
+  pointer-events: none;
+  animation: fly 900ms ease-out forwards;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0) scale(0.6) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(var(--dx), var(--dy))
+               scale(1.2)
+               rotate(var(--rot));
+    opacity: 0;
+  }
+}
+
+.top-ui {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  z-index: 1000;
+}
+
+#start-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 12px 22px;
+  background: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+#score,
+#timer {
+  background: rgba(255,255,255,0.75);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-weight: bold;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.game-fruit {
+  position: absolute;
+  font-size: 2.3rem;
+  user-select: none;
+  cursor: pointer;
+  animation: floatUp 2s linear forwards;
+  z-index: 999;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0px) scale(0.8);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 90px);
+    gap: 18px;
+  }
+
+  .fruit-card {
+    width: 90px;
+    height: 90px;
+    border-radius: 22px;
+    font-size: 2.5rem;
+  }
+
+  .pop {
+    font-size: 1.4rem;
+  }
+
+  .game-fruit {
+    font-size: 1.8rem;
+  }
+
+  .top-ui {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
