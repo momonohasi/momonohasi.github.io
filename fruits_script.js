@@ -6,10 +6,10 @@ const backgrounds = [
   "linear-gradient(135deg, #fff4d6, #ffdff0, #e6fff8)",
 
   // 夕方
-  "linear-gradient(135deg, #ffd6c9, #ffe4b8, #e6d6ff)",
+  "linear-gradient(135deg, #ffd6c9, #e6d6ff, #ffcfe8)",
 
   // 夜
-  "linear-gradient(135deg, #d9e8ff, #dcd6ff, #eef1ff)"
+  "linear-gradient(135deg, #cfe8ff, #d9d6ff, #f4cfff)"
 ];
 
 const randomBg =
