@@ -16,7 +16,7 @@ body {
 }
 */
 
-/*スマホ対応*/
+/* スマホ対応 */
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 120px);
@@ -25,16 +25,21 @@ body {
 
 @media (max-width: 600px) {
   .grid {
-    grid-template-columns: repeat(3, 120px);
+    grid-template-columns: repeat(3, 90px);
     gap: 18px;
   }
 
   .fruit-card {
-    width: 120px;
-    height: 120px;
-    font-size: 3rem;
+    position: relative;
+    width: 90px;
+    height: 90px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.72);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
   }
-}
 
   .pop {
     font-size: 1.4rem;
