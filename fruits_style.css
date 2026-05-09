@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff4d6, #ffdff0, #e6fff8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(5, 120px);
+  gap: 18px;
+}
+
+.fruit-card {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  cursor: pointer;
+  overflow: visible;
+}
+
+.pop {
+  position: absolute;
+  font-size: 1.8rem;
+  pointer-events: none;
+  animation: fly 900ms ease-out forwards;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(0, 0) scale(0.6) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--dx), var(--dy)) scale(1.2) rotate(var(--rot));
+    opacity: 0;
+  }
+}
