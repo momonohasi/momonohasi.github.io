@@ -20,7 +20,8 @@ document.body.style.background = randomBg;
 const cards = document.querySelectorAll(".fruit-card");
 
 cards.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
+
+  function popFruit() {
     const emoji = card.dataset.emoji;
     const count = Math.floor(Math.random() * 9) + 8;
 
@@ -47,5 +48,11 @@ cards.forEach((card) => {
         pop.remove();
       }, 900);
     }
-  });
+  }
+
+  // PC
+  card.addEventListener("mouseenter", popFruit);
+
+  // スマホ
+  card.addEventListener("touchstart", popFruit);
 });
