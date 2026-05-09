@@ -25,16 +25,16 @@ body {
 
 @media (max-width: 600px) {
   .grid {
-    grid-template-columns: repeat(4, 80px);
-    gap: 14px;
+    grid-template-columns: repeat(3, 120px);
+    gap: 18px;
   }
 
   .fruit-card {
-    aspect-ratio: 1 / 1;
-    width: 100%;
-    font-size: 2.2rem;
-    border-radius: 22px;
+    width: 120px;
+    height: 120px;
+    font-size: 3rem;
   }
+}
 
   .pop {
     font-size: 1.4rem;
@@ -43,12 +43,8 @@ body {
 
 .fruit-card {
   position: relative;
-  /*
   width: 120px;
   height: 120px;
-  */
-  aspect-ratio: 1 / 1;
-  width: 100%;
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.72);
   display: flex;
