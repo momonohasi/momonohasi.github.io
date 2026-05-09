@@ -1,25 +1,21 @@
-const hour = 1; // ←ここ変えると時間帯テストできる！
-
-if (hour >= 0 && hour < 6) {
+const backgrounds = [
   // 朝
-  document.body.style.background =
-    "linear-gradient(135deg, #e8ffe3, #d6fff5, #dff4ff)";
-} 
-else if (hour >= 6 && hour < 12) {
+  "linear-gradient(135deg, #dcffe3, #dff7ff, #fff6cc)",
+
   // 昼
-  document.body.style.background =
-    "linear-gradient(135deg, #fff4d6, #ffdff0, #e6fff8)";
-} 
-else if (hour >= 12 && hour < 18) {
+  "linear-gradient(135deg, #fff4d6, #ffdff0, #e6fff8)",
+
   // 夕方
-  document.body.style.background =
-    "linear-gradient(135deg, #ffe0c9, #ffd6f5, #e7dcff)";
-} 
-else {
+  "linear-gradient(135deg, #ffd6c9, #ffe4b8, #e6d6ff)",
+
   // 夜
-  document.body.style.background =
-    "linear-gradient(135deg, #dff4ff, #e4dcff, #f3e1ff)";
-}
+  "linear-gradient(135deg, #d9e8ff, #dcd6ff, #eef1ff)"
+];
+
+const randomBg =
+  backgrounds[Math.floor(Math.random() * backgrounds.length)];
+
+document.body.style.background = randomBg;
 
 const cards = document.querySelectorAll(".fruit-card");
 
