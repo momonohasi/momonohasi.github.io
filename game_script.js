@@ -28,6 +28,7 @@ function popFruit(card) {
   const count = Math.floor(Math.random() * 9) + 8;
 
   for (let i = 0; i < count; i++) {
+
     const pop = document.createElement("span");
 
     pop.className = "pop";
@@ -59,6 +60,7 @@ function popFruit(card) {
 cards.forEach((card) => {
 
   function normalModePop() {
+
     if (!gameMode) {
       popFruit(card);
     }
@@ -66,7 +68,6 @@ cards.forEach((card) => {
 
   card.addEventListener("mouseenter", normalModePop);
   card.addEventListener("touchstart", normalModePop);
-
 });
 
 function spawnGameFruit() {
@@ -90,6 +91,12 @@ function spawnGameFruit() {
     randomCard.offsetTop +
     randomCard.offsetHeight / 2 -
     16 + "px";
+
+  const moveX = Math.random() * 240 - 120;
+  const moveY = Math.random() * 240 - 120;
+
+  fruit.style.setProperty("--moveX", moveX);
+  fruit.style.setProperty("--moveY", moveY);
 
   function hitFruit() {
 
