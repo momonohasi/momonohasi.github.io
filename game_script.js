@@ -16,6 +16,9 @@ const startBtn = document.getElementById("start-btn");
 const scoreText = document.getElementById("score");
 const timerText = document.getElementById("timer");
 
+const gameMessage =
+  document.getElementById("game-message");
+
 let gameMode = false;
 let score = 0;
 let timeLeft = 15;
@@ -24,6 +27,7 @@ let spawnInterval;
 let timerInterval;
 
 function popFruit(card) {
+
   const emoji = card.dataset.emoji;
   const count = Math.floor(Math.random() * 9) + 8;
 
@@ -126,6 +130,8 @@ startBtn.addEventListener("click", () => {
 
   gameMode = true;
 
+  gameMessage.style.opacity = "1";
+
   score = 0;
   timeLeft = 15;
 
@@ -149,6 +155,8 @@ startBtn.addEventListener("click", () => {
         clearInterval(timerInterval);
 
         gameMode = false;
+
+        gameMessage.style.opacity = "0";
 
         timerText.textContent = "TIME UP!";
 
