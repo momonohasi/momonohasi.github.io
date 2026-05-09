@@ -54,7 +54,7 @@ body {
 /* スマホ対応 */
 @media (max-width: 600px) {
   .grid {
-    grid-template-columns: repeat(3, 90px);
+    grid-template-columns: repeat(2, 90px);
     gap: 18px;
   }
 
