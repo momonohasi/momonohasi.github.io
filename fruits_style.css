@@ -5,7 +5,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
   font-family: sans-serif;
 }
 
