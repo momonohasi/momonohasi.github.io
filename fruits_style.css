@@ -8,11 +8,33 @@ body {
   overflow: hidden;
   font-family: sans-serif;
 }
-
+/*
 .grid {
   display: grid;
   grid-template-columns: repeat(5, 120px);
   gap: 18px;
+}
+*/
+
+/*スマホ対応*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 18px;
+  width: min(90vw, 700px);
+}
+
+@media (max-width: 600px) {
+  .fruit-card {
+    width: 90px;
+    height: 90px;
+    font-size: 2.5rem;
+    border-radius: 22px;
+  }
+
+  .pop {
+    font-size: 1.4rem;
+  }
 }
 
 .fruit-card {
